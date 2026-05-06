@@ -4,7 +4,7 @@ public class pulsa {
         Scanner input = new Scanner(System.in);
 
         String [] namaProvider = new String [0];
-        int [] total = new int [0];
+        double [] total = new double [0];
         double [] cashback = new double [0];
         String [] jenisPaket = new String [0];
         int [] nominal = new int [0];
@@ -19,7 +19,7 @@ public class pulsa {
             System.out.println("1. Masukkan jumlah pelanggan");
             System.out.println("2. Masukkan nominal harga");
             System.out.println("3. perhitungan nominal");
-            System.out.println("4. pentotalan pembayaran");
+            System.out.println("4. keluar program");
             System.out.print("Pilih menu : ");
             menu = input.nextInt();
 
