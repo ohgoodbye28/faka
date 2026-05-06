@@ -9,9 +9,6 @@ public class pulsa {
         String [] jenisPaket = new String [0];
         int [] nominal = new int [0];
         int  pelanggan = 0;
-
-        System.out.print("Masukkan jumlah pelanggan!");
-        pelanggan = input.nextInt();
         int menu = 0;
 
        do {
@@ -28,21 +25,20 @@ public class pulsa {
                     System.out.println("-----Pendataan pelanggan-----");
                     System.out.print("Jumlah data yang ingin anda inputkan: ");
                     pelanggan = input.nextInt();
-
                     input.nextLine();
 
-                    // deklarasi ulang array
+        
+
                     namaProvider = new String[pelanggan];
                     jenisPaket = new String [pelanggan];
 
-                    // input output array menggunakan loop
-                    // indeks array harus dimulai dari 0
                     for (int i = 0; i < namaProvider.length; i++) {
-                        System.out.print("inputkan nama provider: ");
+                        System.out.println("inputkan nama provider: ");
                         namaProvider[i] = input.nextLine();
-                        System.out.print("inputkan jenis paket: ");
+
+                        System.out.println("inputkan jenis paket: ");
                         jenisPaket[i] = input.nextLine();
-                        input.nextLine();
+
                         System.out.println();
                     }
                     // output
@@ -82,22 +78,28 @@ public class pulsa {
                     break;
 
                 case 3:
-                    System.out.println("-----Penghitungan total bayar-----");
+                
+                       System.out.println("-----Penghitungan total bayar-----");
+
+                         total = new double[pelanggan];      
+                         cashback = new double[pelanggan];   
+
                     for (int i = 0; i < pelanggan; i++) {
-                    total[i] = nominal[i] + 200;
+                     total[i] = nominal[i] + 200;
 
                     if(total[i] >= 100000){
-                    cashback[i] = total[i] - (total[i] * 15/100); 
+                     cashback[i] = total[i] * 15 / 100;
                     } else if (total[i] >= 50000){
-                    cashback[i] = total[i] - (total[i] * 10/100);
-                    } else if (total[i] < 50000){
-                    cashback[i] = 0;
-                    }
+                     cashback[i] = total[i] * 10 / 100;
+                    } else {
+                     cashback[i] = 0;
                     }
 
-                    System.out.println("Total bayar" + (total[i] - cashback[i]));
+                    double bayar = total[i] - cashback[i];
+
+                    System.out.println("Total bayar pelanggan ke-" + (i+1) + ": " + bayar);
+                    }
                     break;
-
                 case 4:
                     System.out.println("terimakasih telah berkunjung");
                     System.exit(0);
