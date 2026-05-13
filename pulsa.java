@@ -20,7 +20,7 @@ public class pulsa {
             System.out.print("Pilih menu : ");
             menu = input.nextInt();
 
-            switch (menu) {
+            switch (menu) { 
                 case 1:
                     System.out.println("-----Pendataan pelanggan-----");
                     System.out.print("Jumlah data yang ingin anda inputkan: ");
@@ -63,7 +63,7 @@ public class pulsa {
                         nominal[i] = input.nextInt();
                         System.out.println();
 
-                        if (nominal[i] == 1){
+                         if (nominal[i] == 1){
                             nominal[i] = 15000;
                         } else if (nominal[i] == 2){
                             nominal[i] = 25000;
@@ -78,7 +78,6 @@ public class pulsa {
                     break;
 
                 case 3:
-                
                        System.out.println("-----Penghitungan total bayar-----");
 
                          total = new double[pelanggan];      
@@ -94,9 +93,7 @@ public class pulsa {
                     } else {
                      cashback[i] = 0;
                     }
-
                     double bayar = total[i] - cashback[i];
-
                     System.out.println("Total bayar pelanggan ke-" + (i+1) + ": " + bayar);
                     }
                     break;
